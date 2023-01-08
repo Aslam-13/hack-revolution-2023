@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #00a69c;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+/* -------------------drop down---------------------------------- */
+
+.drop-down{
+    width: 100%;
+    max-width: 15rem;
+    position: relative;
+    display: inline-block;
+    height: 3.5rem;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+
+.select{
+    padding: .9rem 1.5rem;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 17px;
+    background-color: rgb(247, 246, 246);
+    border: 3px solid rgb(246, 246, 246);
+    font-size: .85rem;
+    font-weight: 500;
+    color: rgb(97, 96, 96);
+    cursor: pointer;
+
+}
+
+li.active{
+    color: #00a69c;
+}
+
+
+.caret{
+    width: 0;
+    height: 0;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 6px solid black;
+    transition: .3s;
+}
+.caret-rotate{
+    transform: rotate(180deg);
+}
+.menu{
+    background-color: rgb(247, 246, 246);
+    font-size: .85rem;
+    font-weight: 500;
+    color: rgb(97, 96, 96);
+    border-radius: 1rem;
+    padding: .4rem 1.5rem;
+    top: 3rem;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%,-50%);
+    margin-top: 1rem;
+}
+
+.menu li{
+    margin: .5rem 0;
+}
+
+.drop-down:has(.menu-open){
+    height: 100%;
+}
+

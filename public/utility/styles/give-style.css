@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #00a69c;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+.button{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5rem;
+    
+    font-size: .95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    
+    background-color: #00a69c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .65rem .95rem;
+    width: 100%;
+    max-width: 12rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+a:has(.button){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button:hover{
+    filter: brightness(97%);
+}
+
+.heading{
+    font-size: 2.65rem;
+    font-family: "Abril Fatface",cursive;
+    color: #00a69c;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.text{
+    font-size: .85rem;
+    padding: 0 .50rem;   
+    line-height: 1.65rem; 
+    color: rgb(97, 96, 96);
+}
+
+.give-sec,.give-food{
+    margin-top: 120px !important;
+    padding: 1rem 5rem !important;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.75rem;
+}
+
+
+/* --------------------------------------upload image section------------------------------- */
+
+.upload-img-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper{
+    height: 350px;
+    width: 520px;
+    border: 3px dashed #00a69c;
+    border-radius: 17px;
+    background-color: rgb(247, 246, 246);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper.active{
+    border: none;
+}
+
+.up-image{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.up-image img{
+    border-radius: 17px;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+}
+
+.up-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.up-icon{
+    color: #00a69c;
+    font-size: 2.5rem;
+}
+.up-text{
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+#cancle-btn{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.25rem;
+    background-color: #00a69c;
+    border-radius: 50%;
+    width: 3rem;
+    font-size: 2rem;
+    color: white;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+    scale: .75;
+    cursor: pointer;
+    transition: .3s;
+
+    display: none;
+}
+
+.wrapper.active:hover #cancle-btn{
+    display: flex;
+}
+
+#cancle-btn:hover{
+    filter: brightness(97%);
+}
+
+.up-file-name{
+    position: absolute;
+    bottom: 0;
+    background-color: #00a69c;
+    width: 105%;
+    font-size: 1.1rem;
+    padding: 8px 0;
+    text-align: center;
+    color: white;
+    display: none;
+}
+
+.wrapper.active:hover .up-file-name{
+    display: block;
+}
+
+.upload-img-container .button{
+    margin: 35px 0 15px;
+    padding: .7rem 1rem ;
+
+}
+
+/* ---------------------------------------form input-------------------------------- */
+.upload-food{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upload-food > .button{
+    max-width: 100%;
+}
+
+.form-input{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    background-color: rgb(247, 246, 246);
+    border: 3px solid rgb(246, 246, 246);
+    width: 100%;
+    border-radius: 17px;
+    /* margin-bottom: 1.5rem; */
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 500;
+    color: rgb(97, 96, 96);
+    outline: none;
+    transition: .3s;
+}
+
+.form-input:hover{
+    filter: brightness(98%);
+}
+
+.form-input:focus,
+.form-input:valid{
+    filter: brightness(100%);
+    border-color: #00a69c;
+    color: black;
+}
+/* the valid pseudo class will allow us to keep the CSS style on the input field till it has a valid value */
+
+.form-input::placeholder{
+    color: rgb(97, 96, 96);
+}
+
+textarea.form-input{
+    resize: none;
+    min-height: 170px;
+}
+
+
+
+/* -----------------------------------media queries-------------------------------- */
+
+@media(max-width:768px){
+    .heading{
+        font-size: 2.55rem;
+        text-align: center;
+    }
+    .button{
+        padding: .6rem .75rem;
+        font-size: .8rem;
+        max-width: 10.5rem;
+    }
+    .filter-box{
+        align-self: center;
+    }
+
+    .list-item{
+        flex-direction: column;
+        padding-right: 0;
+        gap: 1.25rem;
+        padding-bottom: 2rem;
+    }
+    .item-desc{
+        gap: .75rem;
+    }
+    .item-img{
+        width: 100%;
+        height: 21rem;
+        border-radius: 0 0 .5rem .5rem;
+    }
+    .food-name{
+        font-size: 2.15rem;
+    }
+    .provider,.distance,.days{
+        color: #00a69c;
+        font-size: .95rem;
+    }
+    
+    .location-days{
+        justify-content: space-between;
+        width: 80%;
+        gap: 0;
+    }
+
+
+}
+@media(max-width:425px){
+    .give-sec,.get-sec,.give-food{
+        padding: 1rem 2.25rem !important;
+    }
+
+    .get-sec{
+        margin-top: 80px !important;
+    }
+
+    .heading{
+        font-size: 1.95rem;
+    }
+
+    .search-box{
+        max-width: 23rem;
+        scale: .8;
+    }
+    input[type="text"]{
+        width: 15rem;
+    }
+    .item-desc{
+        gap: .5rem;
+    }
+    .item-img{
+        height: 13rem;
+    }
+
+    .listed-items{
+        padding: 0 0 !important;
+    }
+
+    .list-item{
+        overflow: hidden;
+    }
+    .food-name{
+        font-size: 1.75rem;
+    }
+    .text{
+        font-size: .75rem;
+    }
+    .provider,.distance,.days{
+        font-size: .85rem;
+    }
+    
+    .location-days{
+        justify-content: space-between;
+        width: 80%;
+        gap: 0;
+    }
+
+
+
+}
+@media(max-width:375px){
+    .heading{
+        font-size: 1.55rem;
+    }
+    .button{
+        padding: .6rem .75rem;
+        font-size: .75rem;
+        max-width: 9.5rem;
+    }
+    .search-box{
+        max-width: 20rem;
+    }
+    input[type="text"]{
+        width: 15rem;
+    }
+
+    .food-name{
+        font-size: 1.5rem;
+    }
+    .item-req{
+        scale: .9;
+    }
+}
+@media(max-width:320px){
+    .give-sec{
+        gap: 2rem;
+    }
+    .heading{
+        font-size: 1.35rem;
+    }
+    .button{
+        padding: .6rem .75rem;
+        font-size: .75rem;
+        max-width: 8.5rem;
+    }
+    .item-desc{
+        padding: 0 1.5rem;
+    }
+    .item-img{
+        height: 11rem;
+    }
+    .search-box{
+        max-width: 17rem;
+    }
+    input[type="text"]{
+        width: 12rem;
+    }
+}

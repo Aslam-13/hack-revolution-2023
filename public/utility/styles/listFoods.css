@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;400;500;600;800&display=swap');
+
+/* font-family: 'Caramel', cursive;
+font-family: 'Fugaz One', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Poppins', sans-serif; */
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #e33745;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+.button{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* border: 0px; */
+    border-radius: 5rem;
+    
+    font-size: .95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    
+    box-shadow: 0 4px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .65rem .95rem;
+    width: 100%;
+    max-width: 12rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button > *{
+    color: white;
+}
+
+.button:hover{
+    background-color: white;
+    color: #e33745;
+}
+
+
+/* ---------------------Navigation-------------------------- */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+
+    transition: .3s;
+}
+
+header.scrolled{
+    background-color: transparent;
+    box-shadow: 0 3px 15px .1px rgb(0 0 0/.1);
+    backdrop-filter: blur(3px);
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    line-height: 120px;
+    height: 120px;
+
+    font-size: 3rem;
+    font-family: "Monoton",cursive;
+    color: white;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+header.scrolled .logo{
+    line-height: 100px;
+    height: 100px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.nav-links{
+    position: relative;
+
+    font-size: .95rem;
+    font-weight: 500;
+
+    text-transform: capitalize;
+    color: white;
+    
+    transition: .4s ease-in-out;
+}
+
+.nav-links:hover{
+    text-shadow: 0 0 2.5px rgba(255, 255, 255);
+}
+
+.nav-links::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    z-index: -1;
+
+    height: 10px;
+    width: 0px;
+    border-radius: 10px;
+
+    background-color: white;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.nav-links:hover::after{
+    opacity: .5;
+    width: 100%;
+}
+
+.hamburger{
+    display: none;
+    padding: 1rem 0;
+    height: 12px;
+    width: 25px;
+    box-sizing: content-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger .bar{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.hamburger .bar:first-child{
+    top: 1rem;
+    transition: top .2s .15s, transform .3s;
+}
+.hamburger .bar:last-child{
+    bottom: 1rem;
+    transition: bottom .2s .15s, transform .3s;
+}
+
+body.open .hamburger .bar:first-child{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: top .2s,transform .3s .1s;
+}
+body.open .hamburger .bar:last-child{
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg);
+    transition: bottom .2s,transform .3s .1s;
+}
+
+body.stop-scrolling{
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* -------------------------------Index landing page--------------------- */
+
+section:has(.landing-page){
+    background-image: linear-gradient(90deg,rgba(0 0 0/.5),rgba(0 0 0/.5)),
+        url("../assets/images/content-strawberries.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.landing-page{
+    height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7rem;
+}
+
+
+.title{
+    font-family: 'Caramel', cursive;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    text-align: center;
+
+    margin-top: 2rem;
+}
+
+
+/* -----------------------------------media 768px----------------------------------- */
+
+@media (max-width:768px){
+
+    .logo{
+        font-size: 2.65rem;
+    }
+
+    .button > *{
+        color: #e33745;
+    }
+
+    .nav-links{
+        font-size: .85rem;
+    }
+
+    .nav-links:hover::after{
+        opacity: 0;
+        width: 0;
+    }
+
+    .links{
+        order: 3;
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        position: relative;
+        opacity: 0;
+    }
+
+    .links::after{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: .5px;
+        background-color: white;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        transition: .3s;
+    }
+
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background-color: rgb(0 0 0/.5);
+        opacity: 0;
+        transition: .3s;
+        pointer-events: none;
+    }
+
+    header{
+        height: 417px;
+        max-height: 120px;
+        overflow: hidden;
+        transition: .3s;
+    }
+
+    
+    body.open header{
+        max-height: 417px;
+        background-color: transparent;
+        box-shadow: 0 3px 15px .1px rgb(0 0 0/.1);
+        backdrop-filter: blur(10px);
+    }
+
+    header.scrolled{
+        height: 100px;
+    }
+
+    body.open header.scrolled{
+        height: 397px;
+    }
+
+    body.open .overlay{
+        opacity: 1;
+        pointer-events: fill;
+        z-index: 1;
+    }
+
+    body.open .links{
+        opacity: 1;
+    }
+    
+    body.open .links::after{
+        width: 100%;
+        opacity: .7;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+
+    .title{
+        font-size: 3.15rem;
+        margin-top: 2.75rem;
+    }
+
+    .landing-content{
+        gap: 5rem;
+    }
+
+    .button{
+        padding: .6rem .75rem;
+        font-size: .8rem;
+        max-width: 9rem;
+        background-color: white;
+        color: #e33745;
+    }
+
+}
+
+
+@media (max-width:425px){
+    .logo{
+        font-size: 2.35rem;
+    }    
+
+    .title{
+        font-size: 2.85rem;
+    }
+
+    .button{
+        max-width: 8.5rem;
+    }
+
+    .nav-links{
+        font-size: .75rem;
+    }
+}
+
+@media (max-width:320px){
+    .logo{
+        font-size: 2.15rem;
+    }    
+
+    .title{
+        font-size: 2.65rem;
+    }
+
+    .button{
+        max-width: 8rem;
+    }
+
+    .nav-links{
+        font-size: .66rem;
+    }
+}
+
+

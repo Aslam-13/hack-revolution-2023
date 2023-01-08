@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #00a69c;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+.button{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* border: 0px; */
+    border-radius: 5rem;
+    
+    font-size: .95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    
+    box-shadow: 0 4px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .65rem .95rem;
+    width: 100%;
+    max-width: 12rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button > *{
+    color: white;
+    transition: .3s;
+}
+
+.button:hover{
+    background-color: white;
+}
+.button:hover > *{
+    color: #00a69c;
+}
+
+.logo,.nav-links{
+    color: white !important;
+}
+.nav-links::after{
+    background-color: white !important;
+}
+
+
+.heading{
+    /* font-size: 2.65rem; */
+    font-size: 3.25rem;
+    font-family: "Abril Fatface",cursive;
+    color: #00a69c;
+    letter-spacing: 2px;
+}
+
+.text{
+    font-size: .95rem;
+    padding: 0 .50rem;   
+    line-height: 1.65rem; 
+    color: rgb(97, 96, 96);
+}
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------Index landing page--------------------- */
+
+
+section:has(.landing-page){
+    background-image: linear-gradient(90deg,rgba(0 0 0/.5),rgba(0 0 0/.5)), 
+        url("../assets/images/content-strawberries.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* top: -120px; */
+    /* margin: 120px 0; */
+}
+.landing-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    height: 100vh;
+}
+
+
+.title{
+    font-family: 'Caramel', cursive;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    text-align: center;
+
+}
+
+/* -----------------------------------how share--------------------------------------- */
+
+.how-share,.how-request{
+    margin-top: 120px !important;
+    display: flex;
+    padding: 1rem 5rem !important;
+    flex-direction: column;
+    gap: 2.25rem;
+    /* align-items: center; */
+}
+
+.share-box{
+    display: flex;
+    gap: 2rem;
+}
+
+.share-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.share-image{
+    max-width: 27rem;
+    aspect-ratio: 1/1;
+    align-self: center;
+    border-radius: 2rem;
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #00a69c;
+    box-shadow: 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.share-image::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    max-height: 20rem;
+    aspect-ratio: 1/1;
+    background-color: #00a69c;
+    border-radius: 2rem;
+    top: -10px;
+    left: -13px;
+    z-index: -1;
+}
+.share-image::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    max-height: 20rem;
+    aspect-ratio: 1/1;
+    background-color: #00a69c;
+    border-radius: 2rem;
+    bottom: -10px;
+    right: -13px;
+    z-index: -1;
+}
+
+.share-image > img{
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2rem;
+}
+
+.share-points{
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.share-title >  span{
+    margin-right: 1rem;
+}
+
+.share-title{
+    display: inline;
+    font-size: 1.75rem;
+}
+.share-title + .text{
+    margin-left: 1.25rem;
+    margin-top: .75rem;
+}
+
+.how-request > .share-box{
+    gap: 4rem;
+}
+
+/* -----------------------------------media 768px----------------------------------- */
+@media(max-width:768px){
+    
+    .how-share,.how-request{
+        margin-top: 90px !important;
+        gap: 1.25rem;
+    }
+    .heading{
+        font-size: 2.95rem;
+    }
+    .text{
+        font-size: .8rem;
+        line-height: 1.5rem;
+    }
+    .share-title{
+        font-size: 1.5rem;
+    }
+    .share-image{
+        display: none;
+    }
+}
+@media(max-width:425px){
+
+    .how-share,.how-request{
+        padding: 1rem 2.25rem !important;
+    }
+    .heading{
+        font-size: 2.4rem;
+    }
+    .text{
+        font-size: .75rem;
+    }
+    .share-title{
+        font-size: 1.25rem;
+    }
+}
+@media(max-width:375px){
+    .heading{
+        font-size: 2rem;
+    }
+    .text{
+        font-size: .7rem;
+    }
+}
+@media(max-width:320px){
+    .heading{
+        font-size: 1.95rem;
+    }
+    .text{
+        font-size: .7rem;
+    }
+    .share-title{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:768px){
+    .button > *{
+        color: #00a69c;
+    }
+
+    .title{
+        font-size: 3.15rem;
+        /* margin-top: 2.75rem; */
+    }
+
+    .landing-content{
+        gap: 5rem;
+    }
+
+    .button{
+        padding: .6rem .75rem;
+        font-size: .8rem;
+        max-width: 9rem;
+        background-color: white;
+        color: #00a69c;
+    }
+
+}
+
+
+@media (max-width:425px){
+    .title{
+        font-size: 2.85rem;
+    }
+
+    .button{
+        max-width: 8.5rem;
+    }
+
+}
+
+@media (max-width:320px){
+    .title{
+        font-size: 2.65rem;
+    }
+
+    .button{
+        max-width: 8rem;
+    }
+
+}
+
+
+

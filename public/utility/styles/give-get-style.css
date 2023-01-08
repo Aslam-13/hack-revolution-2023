@@ -18,7 +18,7 @@ body{
 
 ::selection{
     color: white;
-    background-color: #e33745;
+    background-color: #00a69c;
 }
 
 :focus{
@@ -59,7 +59,7 @@ img{
     text-transform: capitalize;
     color: rgb(255, 255, 255);
     
-    background-color: #e33745;
+    background-color: #00a69c;
 
     display: flex;
     align-items: center;
@@ -73,6 +73,12 @@ img{
     transition: .3s;
 }
 
+a:has(.button){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .button:hover{
     filter: brightness(97%);
 }
@@ -80,8 +86,9 @@ img{
 .heading{
     font-size: 2.65rem;
     font-family: "Abril Fatface",cursive;
-    color: #e33745;
+    color: #00a69c;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .text{
@@ -91,7 +98,7 @@ img{
     color: rgb(97, 96, 96);
 }
 
-.give-sec,.get-sec{
+.give-sec,.get-sec,.give-food{
     margin-top: 120px !important;
     padding: 1rem 5rem !important;
     display: flex;
@@ -136,7 +143,7 @@ img{
 .search-box:has(input[type="text"]:focus){
     background: rgba(255, 255, 255);
     filter: brightness(100%);
-    border: 3px solid #e33745;
+    border: 3px solid #00a69c;
 }
 
 .search-box:hover{
@@ -182,7 +189,7 @@ input[type="text"]:focus::placeholder{
 }
 
 input[type="text"]:focus + .search-button > .uil-search{
-    color: #e33745;
+    color: #00a69c;
 }
 
 /* ------------------------------------------listed items--------------------------------- */
@@ -206,7 +213,7 @@ input[type="text"]:focus + .search-button > .uil-search{
 }
 
 .item-img{
-    /* border: 1px solid #e33745; */
+    /* border: 1px solid #00a69c; */
     height: 12rem;
     min-width: 15rem;
     border-radius: .65rem 0 0 .65rem;
@@ -251,12 +258,12 @@ input[type="text"]:focus + .search-button > .uil-search{
 }
 
 .food-name{
-    color: #e33745;
+    color: #00a69c;
     text-transform: capitalize;
     font-size: 1.95rem;
 }
 .provider,.distance,.days{
-    color: #e33745;
+    color: #00a69c;
     font-size: .95rem;
 }
 
@@ -301,7 +308,7 @@ input[type="text"]:focus + .search-button > .uil-search{
         font-size: 2.15rem;
     }
     .provider,.distance,.days{
-        color: #e33745;
+        color: #00a69c;
         font-size: .95rem;
     }
     
@@ -314,7 +321,7 @@ input[type="text"]:focus + .search-button > .uil-search{
 
 }
 @media(max-width:425px){
-    .give-sec,.get-sec{
+    .give-sec,.get-sec,.give-food{
         padding: 1rem 2.25rem !important;
     }
 

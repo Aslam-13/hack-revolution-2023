@@ -23,7 +23,7 @@ body{
 
 ::selection{
     color: white;
-    background-color: #e33745;
+    background-color: #00a69c;
 }
 
 :focus{
@@ -85,7 +85,7 @@ img{
     text-align: center;
     font-size: 2.65rem;
     font-family: "Abril Fatface",cursive;
-    color: #e33745;
+    color: #00a69c;
     letter-spacing: 2px;
 }
 
@@ -115,12 +115,12 @@ img{
 }
 
 .contact .sl > *{
-    color: #e33745;
+    color: #00a69c;
     font-size: 1.5rem;
 }
 
 .text > span{
-    color: #e33745;
+    color: #00a69c;
     font-size: 4rem;
     font-weight: 700;
     font-family: "Caramel",cursive;
@@ -142,7 +142,7 @@ img{
 }
 
 .mail-box > .button{
-    background-color: #e33745;
+    background-color: #00a69c;
     max-width: 100%;
 }
 
@@ -173,7 +173,7 @@ img{
 .form-input:focus,
 .form-input:valid{
     filter: brightness(100%);
-    border-color: #e33745;
+    border-color: #00a69c;
     color: black;
 }
 /* the valid pseudo class will allow us to keep the CSS style on the input field till it has a valid value */

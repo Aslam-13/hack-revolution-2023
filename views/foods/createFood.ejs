@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Project</title>
+
+    <!-- links -->
+    <link rel="stylesheet" href="utility/styles/other-nav-bar-styles.css">
+    <link rel="stylesheet" href="utility/styles/drop-down-style.css">
+    <link rel="stylesheet" href="utility/styles/give-style.css">
+    <link rel="stylesheet" href="utility/styles/footer-style.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <nav>
+            <div class="container navigation">
+                <h1 class="logo">ZiLO</h1>
+                <ul class="links">
+                  <li>
+                    <a class="nav-links" href="/">Home</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/about">About</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/give-get">Get/Give</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="">Sign in</a>
+                </li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <div class="container give-sec">
+                <h1 class="heading"><br>Grab some Items</h1>
+                <a href="/give-get">
+                    <button class="button">get</button>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <div class="container give-food">
+                <h1 class="heading">
+                    Wanna give away some items?
+                </h1>
+
+                <form action="/createFood"  method="post" novalidate  class="upload-food">
+                    <div class="upload-img-container">
+                        <div class="wrapper">
+                            <div class="up-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="up-content">
+                                <div class="up-icon"><i class="uil uil-upload"></i></div>
+                                <div class="up-text">No files chosen</div>
+                            </div>
+                            <div id="cancle-btn"><i class="uil uil-times"></i></div>
+                            <div class="up-file-name">File name</div>
+                        </div>
+                        <input  type="file" name="food[image]" id="default-btn" hidden>
+                        <input  type="button" value="choose photo" name="food[image]" onclick="defaultBtnActive()" class="button">
+                    </div>
+                    <input type="text" name="food[name]" class="form-input" placeholder="Item Name" required autocomplete="off">
+                    <div name="vg-novg" class="drop-down">
+                        <div class="select">
+                            <span class="selected">category</span>
+                            <div class="caret"></div>
+                        </div>
+                        <select class="menu" name="food[veg]" id="">
+                          <option selected value="food">Food</option>
+                          <option value="non-food">Non Food</option>
+                       </select>
+                     
+                    </div>
+                    <textarea name="food[description]" placeholder="Description..." class="form-input" required></textarea>
+                    <input type="text" name="food[location]"  class="form-input" placeholder="location" required autocomplete="off">
+                    <div name="bestBy" class="drop-down">
+                        <div class="select">
+                            <!-- <span class="selected">Best By</span>
+                            <div class="caret"></div> -->
+                        </div>
+                        <!-- <select class="menu" name="food[useByDate]" id="">
+                          <option selected value="0"></option>
+                          <option value="1">1 day</option>
+                          <option value="2">2 day</option>
+                          <option value="3">3 day</option>
+                          <option value="4">4 day</option>
+                          <option value="5">5 day</option>
+                        </select> -->
+
+                    </div>
+                    <button type="submit" class="button">upload</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container footer">
+                <div class="footer-box">
+                    <div class="footer-content">
+                        <h1 class="fl-logo">ZiLO</h1>
+                    </div>
+                    <ul class="socials">
+                        <li class="sl">
+                            <a href=""><i class="uil uil-twitter"></i></a>
+                        </li>
+                        <li class="sl">
+                            <a href=""><i class="uil uil-instagram"></i></a>
+                        </li>
+                        <li class="sl">
+                            <a href=""><i class="uil uil-facebook-f"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="footer-links">
+                    <li>SERVICES</li>
+                    <li>
+                        <a href="" class="ft-link">home</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">about</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">contact</a>
+                    </li>
+                </ul>
+                <ul class="footer-links">
+                    <li>SUPPORT</li>
+                    <li>
+                        <a href="" class="ft-link">help us</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">volunteer</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">join the team</a>
+                    </li>
+                </ul>
+                <ul class="footer-links"> 
+                    <li>LEGAL</li>
+                    <li>
+                        <a href="" class="ft-link">privacy policy</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">terms & conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+
+
+    <!-- script -->
+    <script src="utility/scripts/app.js"></script>
+    <script src="utility/scripts/upload-img.js"></script>
+</body>
+</html>
+ 

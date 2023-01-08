@@ -6,41 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon Project</title>
 
-    <!-- links -->
-    <link rel="stylesheet" href="utility\styles\other-nav-bar-styles.css">
-    <link rel="stylesheet" href="utility\styles\give-get-style.css">
-    <link rel="stylesheet" href="utility\styles\footer-style.css">
-
+    <!-- links --> 
+    <link rel="stylesheet" href="utility/styles/other-nav-bar-styles.css">
+    <link rel="stylesheet" href="utility/styles/give-get-style.css">
+    <link rel="stylesheet" href="utility/styles/footer-style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 </head>
+
 <body>
-    <div class="overlay"></div>
+
+    <!-- <script>
+        if('geolocation' in navigator ){
+            console.log("YYYYYYYY")
+            navigator.geolocation.getCurrentPosition(position=>{
+                console.log(position.coords.latitude); 
+                console.log(position.coords.longitude); 
+                
+          })
+        }
+        else{
+            console.log("NNNNNNNN")
+        }
+console.log(food);
+</script> -->
+ 
     <header>
         <nav>
             <div class="container navigation">
                 <h1 class="logo">ZiLO</h1>
                 <ul class="links">
-                    <li>
-                        <a class="nav-links" href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav-links" href="/about">About</a>
-                    </li>
-                    <li>
-                        <a class="nav-links" href="/give-get">Get/Give</a>
-                    </li>
-                    <li>
-                        <a class="nav-links" href="/contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="nav-links" href="/register">Register</a>
-                    </li>
+                  <li>
+                    <a class="nav-links" href="/">Home</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/about">About</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/give-get">Get/Give</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a class="nav-links" href="/register">Register</a>
+                </li>
                 </ul>
-                <div class="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
             </div>
         </nav>
     </header>
@@ -50,52 +61,74 @@
         <section>
             <div class="container give-sec">
                 <h1 class="heading">Have food you'd like to give away?</h1>
-                <a href="/createFood">
-                    <button class="button">Give</button>
-                </a>
+               <button  class="button"><a style="color:white" href="/createFood">give</a></button>
             </div>
         </section>
 
         <section>
             <div class="container get-sec">
-                <form action="https://google.com/search" method="get" class="filter-box">
+                <form action="/foods" method="GET" class="filter-box">
                     <div class="search-box">
-                        <input type="text" name="q" id="" placeholder="Search for food..." autocomplete="off">
-                        <!-- google accepts name="q" otherwise the button won't submit the text to google search page -->
-                        <button type="submit" class="search-button"><i class="uil uil-search"></i></button>
-                    </div>
-                </form>
+                        <input type="text" name="food[name]" id="" placeholder="Search for food..." autocomplete="off">
+                         <select class="search-box" name="food[veg]" id="veg">
+                            <option selected value="both">both</option>
+                            <option value="veg">veg</option>
+                            <option value="non-veg">non-veg</option>
+                           </select>
+    
+                        <!-- <a href="/foods?name=a&category=a">
+                            <button type="submit" class="search-button">
+                                <i class="uil uil-search"></i>
+                            </button>
+                        </a> -->
 
+                    <!-- </div>
+             
+                </form> -->
+                <!-- <form action="/foods?category=dsa" method="GET" class="filter-box">
+                    <div class="search-box">
+                        <a href="/foods?name=sad"><button type="submit" class="search-button"><i class="uil uil-search"></i></button></a>
+                    </div>
+                </form> --> -->
+
+            </section>
                 <ul class="container listed-items">
+                    <% if(foods.length == 0){   %>
+                        <h4>No results</h4> 
+                        <% }  %> 
+            <% for(let food of foods){ %> 
                     <li>
                         <div class="list-item">
                             <div class="item-img">
-                                <img src="utility\assets\images\biryani.jpg">
+                                <img src="<%=food.image%>">
                             </div>
                             <div class="item-desc">
                                 <h3 class="food-name">
-                                    biryani
+                                
+                                <%= food.name  %>
                                 </h3>
                                 <p class="text">from, <span class="provider">Amaan</span></p>
+                                <p class="provider"><%= food.veg%> </p>
                                 <div class="location-days">
                                     <p class="text">
-                                        <span class="distance">2</span> km away..
+                                        <span class="distance"><%=food.distance%></span> km away..
                                     </p>
                                     <p class="text">
-                                        stays fresh for <span class="days">3</span> days 
+                                        stays fresh for <span class="days"><%=food.useByDate%> </span> days 
                                     </p>
                                 </div>
-                            </div>
-                            <a href="">
-                                <button type="submit" class="button item-req"><i class="uil uil-check"></i></button>
-                            </a>
+                            </div> 
+                                <form action="/foods/<%= food._id %>" method="GET">
+                                    <a href=""><%= food._id %></a>
+                                    <button type="submit" class="button item-req"><i class="uil uil-check"></i></button>
+                                </form>
+                             
                         </div>
                     </li>
+                    <%}%> 
                 </ul>
-
+             <a href="/foods">Go Back</a>
             </div>
-        </section>
-
 
         <footer>
             <div class="container footer">
@@ -157,6 +190,8 @@
 
 
     <!-- script -->
-    <script src="utility\scripts\app.js"></script>
+
+
+    <script src="/scripts/app.js"></script>
 </body>
 </html>

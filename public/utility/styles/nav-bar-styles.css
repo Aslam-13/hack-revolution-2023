@@ -20,7 +20,7 @@ body{
 
 ::selection{
     color: white;
-    background-color: #e33745;
+    background-color: #00a69c;
 }
 
 :focus{
@@ -85,7 +85,7 @@ header.scrolled{
 
     font-size: 3rem;
     font-family: "Monoton",cursive;
-    color: #e33745;
+    color: #00a69c;
 
     cursor: pointer;
     transition: .3s;
@@ -109,7 +109,7 @@ header.scrolled .logo{
     font-weight: 500;
 
     text-transform: capitalize;
-    color: #e33745;
+    color: #00a69c;
     
     transition: .4s ease-in-out;
 }
@@ -129,7 +129,7 @@ header.scrolled .logo{
     width: 0px;
     border-radius: 10px;
 
-    background-color: #e33745;
+    background-color: #00a69c;
     opacity: 0;
     transition: .3s ease-in-out;
 }

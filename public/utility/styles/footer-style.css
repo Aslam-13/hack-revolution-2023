@@ -18,7 +18,7 @@ body{
 
 ::selection{
     color: white;
-    background-color: #e33745;
+    background-color: #00a69c;
 }
 
 :focus{
@@ -53,7 +53,7 @@ img{
 
 footer{
     margin-top: 120px;
-    background-color: #e33745;
+    background-color: #00a69c;
 }
 
 .footer{
@@ -109,7 +109,7 @@ footer{
 }
 
 .sl:hover > *{
-    color: #e33745;
+    color: #00a69c;
 }
 
 .ft-link{
