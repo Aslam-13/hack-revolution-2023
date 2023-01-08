@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #e33745;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+/* ---------------------footer design------------------------------ */
+
+footer{
+    margin-top: 120px;
+    background-color: #e33745;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 3rem 2.25rem !important;
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 10rem;
+}
+
+.fl-logo{
+    font-size: 2.65rem;
+    color: white;
+    font-family: "Monoton",cursive;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.sl{
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+
+    transition: .3s;
+}
+
+.sl > *{
+    color: white;
+    font-size: 1.1rem;
+    transition: .3s;
+}
+
+.sl:hover{
+    background: rgba(255, 255, 255);
+}
+
+.sl:hover > *{
+    color: #e33745;
+}
+
+.ft-link{
+    color: white;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: .95rem;
+    padding-left: .15rem;
+}
+
+.footer-links > li{
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+    padding: 0 0 .55rem 0;
+}
+
+/* ------------------------------------media queries---------------------------------*/
+
+@media (max-width: 768px){
+    .footer-box{
+        width: 100%;
+        max-width: none;
+    }
+    .footer{
+        padding: 3rem 2.75rem !important;
+    }
+    .fl-logo{
+        font-size: 2.5rem;
+    }
+   
+    .sl{
+        width: 35px;
+    }
+    .sl > *{
+        font-size: .97rem;
+    }
+
+    .footer-links > li{
+        font-size: .95rem;
+    }
+    .ft-link{
+        font-size: .85rem;
+    }
+}
+@media(max-width:425px){
+    .footer-links > li{
+        font-size: .87rem;
+    }
+    .ft-link{
+        font-size: .75rem;
+    }
+}
+@media(max-width:320px){
+    .footer-links > li{
+        font-size: .8rem;
+    }
+    .ft-link{
+        font-size: .7rem;
+    }
+}

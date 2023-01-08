@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+/* font-family: 'Caramel', cursive;
+font-family: 'Fugaz One', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Poppins', sans-serif; */
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #e33745;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+.button{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* border: 0px; */
+    border-radius: 5rem;
+    
+    font-size: .95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    
+    box-shadow: 0 4px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .65rem .95rem;
+    width: 100%;
+    max-width: 12rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.heading{
+    text-align: center;
+    font-size: 2.65rem;
+    font-family: "Abril Fatface",cursive;
+    color: #e33745;
+    letter-spacing: 2px;
+}
+
+.text{
+    font-size: .85rem;
+    padding: 0 .50rem;   
+    line-height: 1.65rem; 
+    color: rgb(97, 96, 96);
+}
+
+
+/* -----------------------------------------contact styling------------------------------- */
+
+.contact{
+    margin-top: 120px !important;
+    padding: 1rem 5rem !important;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.contact .sl{
+    border: 0px;
+    width: 45px;
+}
+
+.contact .sl > *{
+    color: #e33745;
+    font-size: 1.5rem;
+}
+
+.text > span{
+    color: #e33745;
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: "Caramel",cursive;
+}
+
+.text:has(span){
+    margin: 2.5rem 0 .5rem;
+}
+
+
+/* ---------------------------------------mail box----------------------------- */
+
+.mail{
+    margin: 50px auto 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mail-box > .button{
+    background-color: #e33745;
+    max-width: 100%;
+}
+
+.mail-box > .button:hover{
+    filter: brightness(97%);
+}
+
+.form-input{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    background-color: rgb(247, 246, 246);
+    border: 3px solid rgb(246, 246, 246);
+    width: 100%;
+    border-radius: 17px;
+    margin-bottom: 1.5rem;
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 500;
+    color: rgb(97, 96, 96);
+    outline: none;
+    transition: .3s;
+}
+
+.form-input:hover{
+    filter: brightness(98%);
+}
+
+.form-input:focus,
+.form-input:valid{
+    filter: brightness(100%);
+    border-color: #e33745;
+    color: black;
+}
+/* the valid pseudo class will allow us to keep the CSS style on the input field till it has a valid value */
+
+.form-input::placeholder{
+    color: rgb(97, 96, 96);
+}
+
+textarea.form-input{
+    resize: none;
+    min-height: 170px;
+}
+
+/* -------------------------------media queries---------------------------- */
+
+@media(max-width:768px){
+    
+    .heading{
+        font-size: 2.55rem;
+    }
+    .text{
+        font-size: .85rem;
+    }
+    .text>span{
+        font-size: 3.75rem;
+    }
+    
+}
+@media(max-width:425px){
+    .contact{
+        padding: 1rem 2.25rem !important;
+    }
+    .heading{
+        font-size: 2rem;
+    }
+    .text{
+        font-size: .75rem;
+    }
+    .text>span{
+        font-size: 3.5rem;
+    }
+
+    .form-input{
+        font-size: .75rem;
+    }
+    .button{
+        font-size: .8rem;
+    }
+    
+}
+@media(max-width:375px){
+    .heading{
+        font-size: 1.725rem;
+    }
+    .text{
+        font-size: .675rem;
+    }
+    .text>span{
+        font-size: 3rem;
+    }
+}
+@media(max-width:320px){
+    .heading{
+        font-size: 1.9rem;
+    }
+    .text{
+        text-align: center;
+        font-size: .7rem;
+    }
+    
+}

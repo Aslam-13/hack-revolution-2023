@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #e33745;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+.button{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5rem;
+    
+    font-size: .95rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    
+    background-color: #e33745;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .65rem .95rem;
+    width: 100%;
+    max-width: 12rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover{
+    filter: brightness(97%);
+}
+
+.heading{
+    font-size: 2.65rem;
+    font-family: "Abril Fatface",cursive;
+    color: #e33745;
+    letter-spacing: 2px;
+}
+
+.text{
+    font-size: .85rem;
+    padding: 0 .50rem;   
+    line-height: 1.65rem; 
+    color: rgb(97, 96, 96);
+}
+
+.give-sec,.get-sec{
+    margin-top: 120px !important;
+    padding: 1rem 5rem !important;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+
+/* ---------------------------------------give section-------------------------------------- */
+
+.give-sec{
+    gap: 2.75rem;
+}
+
+
+/* --------------------------------------get section---------------------------------- */
+
+.get-sec{
+    gap: 2.25rem;
+}
+
+.filter-box{
+    align-self: flex-start;
+}
+
+.search-box{
+    width: 100%;
+    max-width: 25rem;
+    padding:  .25rem .65rem;
+    border-radius: 10rem;
+
+    display: flex;
+    align-items: center;
+
+    transition: .3s;
+    background-color: rgb(247, 246, 246);
+    border: 3px solid rgb(246, 246, 246);
+}
+
+
+.search-box:has(input[type="text"]:focus){
+    background: rgba(255, 255, 255);
+    filter: brightness(100%);
+    border: 3px solid #e33745;
+}
+
+.search-box:hover{
+    filter: brightness(97%);
+}
+
+input[type="text"]{
+    border: 0px;
+    width: 25rem;
+    background-color: transparent;
+    border-radius: 10rem;
+
+    padding: .75rem 1.25rem;
+    font-size: .95rem;
+    color: black;
+
+    transition: .3s;
+}
+
+
+input[type="text"]::placeholder{
+    color: rgb(97, 96, 96);
+    transition: .3s;
+}
+
+input[type="text"]:focus::placeholder{
+    font-weight: 500;
+}
+
+
+.uil-search{
+    padding: 0 .45rem;
+    color: rgb(97, 96, 96);
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.search-button{
+    border: 0;
+    background-color: transparent;
+}
+
+input[type="text"]:focus + .search-button > .uil-search{
+    color: #e33745;
+}
+
+/* ------------------------------------------listed items--------------------------------- */
+
+.listed-items{
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    padding: 0 1rem;
+}
+
+.list-item{
+    display: flex;
+    align-items: center;
+    background-color: rgba(249, 245, 255, 0.675);
+
+    border: 1px solid rgba(199, 199, 199, 0.357);
+    justify-content: space-between;
+    padding-right: 2.25rem;
+    border-radius: .65rem;
+}
+
+.item-img{
+    /* border: 1px solid #e33745; */
+    height: 12rem;
+    min-width: 15rem;
+    border-radius: .65rem 0 0 .65rem;
+}
+
+.item-img > img{
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+}
+
+.item-desc{
+    width: 100%;
+    padding:  0 2rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .45rem;
+}
+
+:is(.item-desc,.location-days) p.text{
+    padding: 0;
+}
+
+.button.item-req{
+    width: 3rem;
+    padding: 0;
+    aspect-ratio: 1/1;
+    font-size: 1.25rem;
+    border-radius: 50% 50%;
+    background-color: transparent;
+    color: green;
+    border: 2px solid green;
+    filter: brightness(150%);
+    transition: .3s;
+}
+
+.button.item-req:hover{
+    background-color: green;
+    filter: brightness(180%);
+    color: white;
+}
+
+.food-name{
+    color: #e33745;
+    text-transform: capitalize;
+    font-size: 1.95rem;
+}
+.provider,.distance,.days{
+    color: #e33745;
+    font-size: .95rem;
+}
+
+.location-days{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+
+/* -----------------------------------media queries-------------------------------- */
+
+@media(max-width:768px){
+    .heading{
+        font-size: 2.55rem;
+        text-align: center;
+    }
+    .button{
+        padding: .6rem .75rem;
+        font-size: .8rem;
+        max-width: 10.5rem;
+    }
+    .filter-box{
+        align-self: center;
+    }
+
+    .list-item{
+        flex-direction: column;
+        padding-right: 0;
+        gap: 1.25rem;
+        padding-bottom: 2rem;
+    }
+    .item-desc{
+        gap: .75rem;
+    }
+    .item-img{
+        width: 100%;
+        height: 21rem;
+        border-radius: 0 0 .5rem .5rem;
+    }
+    .food-name{
+        font-size: 2.15rem;
+    }
+    .provider,.distance,.days{
+        color: #e33745;
+        font-size: .95rem;
+    }
+    
+    .location-days{
+        justify-content: space-between;
+        width: 80%;
+        gap: 0;
+    }
+
+
+}
+@media(max-width:425px){
+    .give-sec,.get-sec{
+        padding: 1rem 2.25rem !important;
+    }
+
+    .get-sec{
+        margin-top: 80px !important;
+    }
+
+    .heading{
+        font-size: 1.95rem;
+    }
+
+    .search-box{
+        max-width: 23rem;
+        scale: .8;
+    }
+    input[type="text"]{
+        width: 15rem;
+    }
+    .item-desc{
+        gap: .5rem;
+    }
+    .item-img{
+        height: 13rem;
+    }
+
+    .listed-items{
+        padding: 0 0 !important;
+    }
+
+    .list-item{
+        overflow: hidden;
+    }
+    .food-name{
+        font-size: 1.75rem;
+    }
+    .text{
+        font-size: .75rem;
+    }
+    .provider,.distance,.days{
+        font-size: .85rem;
+    }
+    
+    .location-days{
+        justify-content: space-between;
+        width: 80%;
+        gap: 0;
+    }
+
+
+
+}
+@media(max-width:375px){
+    .heading{
+        font-size: 1.55rem;
+    }
+    .button{
+        padding: .6rem .75rem;
+        font-size: .75rem;
+        max-width: 9.5rem;
+    }
+    .search-box{
+        max-width: 20rem;
+    }
+    input[type="text"]{
+        width: 15rem;
+    }
+
+    .food-name{
+        font-size: 1.5rem;
+    }
+    .item-req{
+        scale: .9;
+    }
+}
+@media(max-width:320px){
+    .give-sec{
+        gap: 2rem;
+    }
+    .heading{
+        font-size: 1.35rem;
+    }
+    .button{
+        padding: .6rem .75rem;
+        font-size: .75rem;
+        max-width: 8.5rem;
+    }
+    .item-desc{
+        padding: 0 1.5rem;
+    }
+    .item-img{
+        height: 11rem;
+    }
+    .search-box{
+        max-width: 17rem;
+    }
+    input[type="text"]{
+        width: 12rem;
+    }
+}

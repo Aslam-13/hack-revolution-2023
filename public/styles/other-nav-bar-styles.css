@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Fugaz+One&family=Monoton&family=Poppins:wght@100;200;400;500;600;800&display=swap');
+
+/* --------------------------------presets-------------------------- */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::selection{
+    color: white;
+    background-color: #e33745;
+}
+
+:focus{
+    outline: none;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------Reusable CSS-------------------------------- */
+
+.container{
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    width: 100%;
+    max-width: 70rem;
+}
+
+
+
+/* ---------------------Navigation-------------------------- */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+
+    transition: .3s;
+}
+
+header.scrolled{
+    background-color: transparent;
+    box-shadow: 0 3px 15px .1px rgb(0 0 0/.1);
+    backdrop-filter: blur(10px);
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    line-height: 120px;
+    height: 120px;
+
+    font-size: 3rem;
+    font-family: "Monoton",cursive;
+    color: #e33745;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+header.scrolled .logo{
+    height: 100px;
+    line-height: 100px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.nav-links{
+    position: relative;
+
+    font-size: .95rem;
+    font-weight: 500;
+
+    text-transform: capitalize;
+    color: #e33745;
+    
+    transition: .4s ease-in-out;
+}
+
+.nav-links::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    z-index: -1;
+
+    height: 10px;
+    width: 0px;
+    border-radius: 10px;
+
+    background-color: #e33745;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.nav-links:hover::after{
+    opacity: .2;
+    width: 100%;
+}
+
+.hamburger{
+    display: none;
+    padding: 1rem 0;
+    height: 12px;
+    width: 25px;
+    box-sizing: content-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger .bar{
+    width: 100%;
+    height: 2px;
+    background-color: #e33745;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.hamburger .bar:first-child{
+    top: 1rem;
+    transition: top .2s .15s, transform .3s;
+}
+.hamburger .bar:last-child{
+    bottom: 1rem;
+    transition: bottom .2s .15s, transform .3s;
+}
+
+body.open .hamburger .bar:first-child{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: top .2s,transform .3s .1s;
+}
+body.open .hamburger .bar:last-child{
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg);
+    transition: bottom .2s,transform .3s .1s;
+}
+
+body.stop-scrolling{
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* -----------------------------------media 768px----------------------------------- */
+
+@media (max-width:768px){
+    
+    header{
+        height: 417px;
+        max-height: 120px;
+        overflow: hidden;
+    }
+
+    header.scrolled{
+        max-height: 100px;
+    }
+
+    .logo{
+        font-size: 2.65rem;
+    }
+
+    .links{
+        order: 3;
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        position: relative;
+        opacity: 0;
+    }
+    
+    .links::after{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: .5px;
+        background-color: #e33745;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        transition: .3s;
+    }
+    
+    
+    .nav-links{
+        font-size: .85rem;
+    }
+
+    .nav-links:hover::after{
+        opacity: 0;
+        width: 0;
+    }
+    
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background-color: rgb(0 0 0/.3);
+        opacity: 0;
+        transition: .4s;
+        pointer-events: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+    
+    body.open header{
+        max-height: 417px;
+        background-color: white;
+        box-shadow: 0 3px 15px .1px rgb(0 0 0/.1);
+        backdrop-filter: blur(10px);
+    }
+
+    body.open header.scrolled{
+        height: 397px;
+    }
+    
+    body.open .overlay{
+        opacity: 1;
+        pointer-events: fill;
+        z-index: 1;
+    }
+    
+    body.open .links{
+        opacity: 1;
+    }
+    
+    body.open .links::after{
+        width: 100%;
+        opacity: .7;
+    }
+}
+
+@media (max-width:425px){
+    .logo{
+        font-size: 2.35rem;
+    }    
+    
+    .nav-links{
+        font-size: .75rem;
+    }
+}
+
+@media (max-width:320px){
+    .logo{
+        font-size: 2.15rem;
+    }    
+    
+    .nav-links{
+        font-size: .7rem;
+    }
+}

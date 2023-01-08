@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Project</title>
+
+    <!-- links -->
+    <link rel="stylesheet" href="styles\other-nav-bar-styles.css">
+    <link rel="stylesheet" href="styles\give-get-style.css">
+    <link rel="stylesheet" href="styles\footer-style.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <nav>
+            <div class="container navigation">
+                <h1 class="logo">ZiLO</h1>
+                <ul class="links">
+                    <li>
+                        <a class="nav-links" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-links" href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-links" href="give-get.html">Get/Give</a>
+                    </li>
+                    <li>
+                        <a class="nav-links" href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a class="nav-links" href="">Sign in</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <div class="container give-sec">
+                <h1 class="heading">Have food you'd like to give away?</h1>
+                <button class="button">give</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="container get-sec">
+                <form action="https://google.com/search" method="get" class="filter-box">
+                    <div class="search-box">
+                        <input type="text" name="q" id="" placeholder="Search for food..." autocomplete="off">
+                        <!-- google accepts name="q" otherwise the button won't submit the text to google search page -->
+                        <button type="submit" class="search-button"><i class="uil uil-search"></i></button>
+                    </div>
+                </form>
+
+                <ul class="container listed-items">
+                    <li>
+                        <div class="list-item">
+                            <div class="item-img">
+                                <img src="utility\assets\images\biryani.jpg">
+                            </div>
+                            <div class="item-desc">
+                                <h3 class="food-name">
+                                    biryani
+                                </h3>
+                                <p class="text">from, <span class="provider">Amaan</span></p>
+                                <div class="location-days">
+                                    <p class="text">
+                                        <span class="distance">2</span> km away..
+                                    </p>
+                                    <p class="text">
+                                        stays fresh for <span class="days">3</span> days 
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="">
+                                <button type="submit" class="button item-req"><i class="uil uil-check"></i></button>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="container footer">
+                <div class="footer-box">
+                    <div class="footer-content">
+                        <h1 class="fl-logo">ZiLO</h1>
+                    </div>
+                    <ul class="socials">
+                        <li class="sl">
+                            <a href=""><i class="uil uil-twitter"></i></a>
+                        </li>
+                        <li class="sl">
+                            <a href=""><i class="uil uil-instagram"></i></a>
+                        </li>
+                        <li class="sl">
+                            <a href=""><i class="uil uil-facebook-f"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="footer-links">
+                    <li>SERVICES</li>
+                    <li>
+                        <a href="" class="ft-link">home</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">about</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">contact</a>
+                    </li>
+                </ul>
+                <ul class="footer-links">
+                    <li>SUPPORT</li>
+                    <li>
+                        <a href="" class="ft-link">help us</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">volunteer</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">join the team</a>
+                    </li>
+                </ul>
+                <ul class="footer-links"> 
+                    <li>LEGAL</li>
+                    <li>
+                        <a href="" class="ft-link">privacy policy</a>
+                    </li>
+                    <li>
+                        <a href="" class="ft-link">terms & conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+
+
+    <!-- script -->
+    <script src="scripts\app.js"></script>
+</body>
+</html>
